@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Prismbar.Core/Prismbar.Core.csproj" />
+    <Project Path="src/Prismbar/Prismbar.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Prismbar.Tests/Prismbar.Tests.csproj" />
+  </Folder>
+</Solution>

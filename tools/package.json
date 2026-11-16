@@ -1,0 +1,9 @@
+{
+  "name": "prismbar-tools",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "lucide-static": "latest",
+    "svgpath": "latest"
+  }
+}

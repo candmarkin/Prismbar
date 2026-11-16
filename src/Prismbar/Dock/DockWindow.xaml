@@ -1,0 +1,36 @@
+<appbar:AppBarWindow x:Class="Prismbar.Dock.DockWindow"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:appbar="clr-namespace:ManagedShell.AppBar;assembly=ManagedShell.AppBar"
+                     Title="Prismbar"
+                     AllowsTransparency="True" WindowStyle="None" Background="Transparent" ShowInTaskbar="False"
+                     UseLayoutRounding="True" TextOptions.TextFormattingMode="Display"
+                     FontFamily="{StaticResource Font.Ui}" FontSize="12" Foreground="{DynamicResource Brush.Foreground}">
+    <Grid x:Name="RootGrid">
+        <!-- 2 px strip that stays hit-testable along the screen edge when auto-hidden. -->
+        <Border x:Name="EdgeHitStrip" Height="2" Background="#01000000" Visibility="Collapsed" />
+        <Grid x:Name="DockRoot">
+            <Grid.RenderTransform>
+                <TranslateTransform />
+            </Grid.RenderTransform>
+            <Border x:Name="Chrome" />
+            <Border x:Name="GlassHost" IsHitTestVisible="False" />
+            <Grid x:Name="Zones" Margin="8,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition x:Name="CenterColumn" Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel x:Name="LeftZone" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" />
+                <Border x:Name="LeftSeparator" Grid.Column="1" Width="1" Margin="6,0" VerticalAlignment="Center"
+                        Background="{DynamicResource Brush.Separator}" />
+                <ContentPresenter x:Name="CenterZone" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Center" />
+                <Border x:Name="RightSeparator" Grid.Column="3" Width="1" Margin="6,0" VerticalAlignment="Center"
+                        Background="{DynamicResource Brush.Separator}" />
+                <StackPanel x:Name="RightZone" Grid.Column="4" Orientation="Horizontal" VerticalAlignment="Center" />
+            </Grid>
+        </Grid>
+    </Grid>
+</appbar:AppBarWindow>

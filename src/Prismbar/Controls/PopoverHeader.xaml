@@ -1,0 +1,17 @@
+<UserControl x:Class="Prismbar.Controls.PopoverHeader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:Prismbar.Controls"
+             x:Name="Self" Margin="0,0,0,10">
+    <!-- DataContext is the widget (WidgetBase). Gear toggles IsSettingsMode via ShowSettingsCommand. -->
+    <DockPanel LastChildFill="True">
+        <Button DockPanel.Dock="Right" Style="{StaticResource Button.Icon}"
+                Command="{Binding ShowSettingsCommand}"
+                ToolTip="{DynamicResource Common.Settings}"
+                Visibility="{Binding ShowSettingsCommand, Converter={x:Static c:NullToCollapsedConverter.Instance}}">
+            <c:IconPath Icon="settings" Width="16" Height="16" />
+        </Button>
+        <ContentPresenter DockPanel.Dock="Right" Content="{Binding Actions, ElementName=Self}" VerticalAlignment="Center" />
+        <TextBlock Style="{StaticResource Text.Title}" Text="{Binding Title, ElementName=Self}" TextTrimming="CharacterEllipsis" />
+    </DockPanel>
+</UserControl>

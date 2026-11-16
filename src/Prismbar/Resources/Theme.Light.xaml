@@ -1,0 +1,8 @@
+<!-- Light text: used by every style except White. -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="Brush.Foreground" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="Brush.ForegroundSecondary" Color="#B3FFFFFF" />
+    <SolidColorBrush x:Key="Brush.TileHover" Color="#1FFFFFFF" />
+    <SolidColorBrush x:Key="Brush.Separator" Color="#33FFFFFF" />
+</ResourceDictionary>

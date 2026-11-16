@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <UseWPF>true</UseWPF>
+    <IsPackable>false</IsPackable>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" Version="4.0.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="4.0.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Prismbar.Core\Prismbar.Core.csproj" />
+    <ProjectReference Include="..\..\src\Prismbar\Prismbar.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\src\Prismbar\Languages\*.xaml" Link="Languages\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\src\Prismbar\Glass\Shaders\LiquidGlass.hlsl" Link="Shaders\LiquidGlass.hlsl" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
